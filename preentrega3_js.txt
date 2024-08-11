@@ -51,4 +51,10 @@ al hacer click en cancelar o pagar, se vacia el carrito (creando un carrito vaci
 
 
 
+******************************* comandos para compliar css scss********************
 
+descargar node.js 
+npm -v // se instala solo al instalar node.js
+npm install -g sass // en la carpeta de proyecto
+
+sass --watch ./scss/style.scss ./css/style.css

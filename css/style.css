@@ -22,8 +22,9 @@ body {
 .main-about {
   width: 100vw;
   height: 1500px;
-  background-color: #bf0b2c;
-  background-image: linear-gradient(135deg, #bf0b2c 0%, #8c182d 12%, #d94169 23%, #ae4c4c 36%, #f2f2f2 80%, #ffffff 100%);
+  background: #D3CCE3; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #E9E4F0, #D3CCE3); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .main-carrito {
@@ -96,6 +97,12 @@ h3 {
 }
 
 /* iniciobarra de navegacion */
+.navbar-about {
+  background: #D3CCE3; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #E9E4F0, #D3CCE3); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
 .navbar {
   background-color: #D9D9D9;
 }
