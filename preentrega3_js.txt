@@ -1,0 +1,54 @@
+En esta pre entrega 2 del curso de javaScript tengo que usar :
+
+codificar funcionalidad incial del simulador
+flujo de trabajo captura de entradas(promt)
+procesar el promt y mostrar resultado
+
+
+formato html y codigo javaScript 
+formato PreEntrega2+Apellido
+
+
+usar 
+estrucura html, css, javaScript
+
+objetos
+arrays 
+metodos de busqueda y filtrados por arrays 
+
+****objetos*****
+
+carrito
+carrito.usr
+carrito.nombre
+carrito.precio
+carrito.unidades
+carrito.iva
+carrito.suma=carrito.precio* carrito.unidades
+carrito.unidadesTotal
+
+
+**** variables*****
+unidadesTotales
+productos
+carrito
+usuario
+
+****operaciones***
+
+Al hacer click en el boton 🛒 se agregue el producto  al objeto carrito(nombre,unidades,precio)
+y el se agrega un numero al lado de 🛒 del nav con carrito.unidadesTotal
+
+al hacer click en el arrito de abre una pagina nueva con el carrito y su informacion, lista de los elementos agregados(carrito.nombre,carritos.unidades,carrito.suma)
+mostrta total ( suma de carrito.suma*carrito.iva)
+
+botones del carrito ➕ y ➖ al hacer click en sumar se ingrementa en uno carrito.unidades
+al hacer click en restar se resta uno a carrito.unidades
+if carrito.unidades =0 se borra la linea del carrito
+
+al hacer click en cancelar o pagar, se vacia el carrito (creando un carrito vacio)
+
+
+
+
+

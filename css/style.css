@@ -1,0 +1,352 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*formato de la pagina para que no se vea la scrollbar horizonatal  */
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.login-main {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../media/img/icono_obrador.png);
+  background-repeat: repeat;
+  background-size: 1.5%;
+  padding-top: 40px;
+}
+
+.main-about {
+  width: 100vw;
+  height: 1500px;
+  background-color: #bf0b2c;
+  background-image: linear-gradient(135deg, #bf0b2c 0%, #8c182d 12%, #d94169 23%, #ae4c4c 36%, #f2f2f2 80%, #ffffff 100%);
+}
+
+.main-carrito {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../media/img/icono_obrador.png);
+  background-repeat: repeat;
+  background-size: 1.5%;
+  padding-top: 40px;
+}
+
+/* inicio de footer */
+footer {
+  background-color: white;
+  color: black;
+  padding: 5px;
+  text-align: center;
+  font-size: medium;
+  margin-top: 40px;
+}
+
+footer .redes {
+  background-color: #F2F2F2;
+  color: black;
+  padding: 5px;
+  text-align: center;
+  font-size: 30px;
+}
+
+footer a {
+  color: #8C182D;
+  font-weight: bold;
+}
+
+footer .redes i {
+  color: #F20707;
+  font-size: 20px;
+  letter-spacing: 30px;
+}
+
+footer .redes a {
+  text-decoration: none;
+}
+
+/* fin de footer */
+h1 {
+  text-shadow: 0 0 5px black;
+}
+
+h2 {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  font-weight: bold;
+  color: #F20707;
+  text-shadow: 0 0 2px white;
+  margin-bottom: 0;
+}
+
+/* inico de encabezado de productos pagProductos.html */
+h3 {
+  margin-left: 10px;
+}
+
+/* fin  de encabezado de productos pagProductos.html */
+.titulo-about {
+  background-color: rgba(255, 255, 255, 0.034) !important;
+  margin-bottom: 50px;
+  padding-top: 30px;
+}
+
+/* iniciobarra de navegacion */
+.navbar {
+  background-color: #D9D9D9;
+}
+
+.navbar-brand {
+  color: #F20707 !important;
+  /* se usa el !important para superponer a otro codigo el mismo modificador */
+  font-weight: bold;
+  font-size: larger;
+}
+
+.navbar-brand img {
+  height: 70px;
+}
+
+/* color de iconos de nav */
+.nav-link {
+  color: black;
+}
+
+/* fin de barra de navegacion */
+.form-control-w5 {
+  width: 35px !important;
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0.375rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* inicio de banner */
+.Jumbotron {
+  height: 400px;
+  background-image: url(../media/img/pan_dulce_duo-min.webp);
+  font-weight: bolder;
+  background-position: center;
+  background-size: cover;
+}
+
+.sombras {
+  text-shadow: 0 0 5px black;
+}
+
+/* fin de banner */
+/* inicio de banner logo*/
+.jumbotron-logo {
+  height: 400px;
+  max-width: 800px;
+  background-image: url(../media/img/logoObrador.png);
+  font-weight: bolder;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.bg-primary {
+  background-color: white !important;
+}
+
+.sombras-logo {
+  color: #F20707;
+  text-shadow: 0 0 5px #F2F2F2;
+}
+
+/* fin de banner */
+/* inicio del carrousel */
+carrousel {
+  width: 100vw;
+}
+
+.carousel-item {
+  width: 100vw;
+  max-height: 500px;
+}
+
+/* fin del carrousel */
+.img-about {
+  width: 70vw;
+  height: 80vh;
+  border: 0px solid #F20707;
+  border-radius: 25px;
+  margin: 0 auto;
+  background-image: url(../media/img/pan_dulce_duo-min.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 80px;
+}
+
+/* inicio de presentacion de productos */
+.prod-left {
+  background-image: url(../media/img/pastafrola_cerca-min.webp);
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 40px;
+}
+
+.prod-right {
+  padding: 20px;
+}
+
+.prod2-left {
+  background-image: url(../media/img/pan_d_lado-min.webp);
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 40px;
+}
+
+.prod2-right {
+  padding: 20px;
+}
+
+.prod3-left {
+  background-image: url(../media/img/pasta_rellena-min.webp);
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+}
+
+.prod3-right {
+  padding: 20px;
+}
+
+/* fin de presentacion de productos */
+/* inicio de presentacion de sevicios */
+.serv-left {
+  background-image: url(../media/img/yo_cortando.webp);
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+  margin-bottom: 40px;
+}
+
+.serv-right {
+  padding: 20px;
+}
+
+.serv2-left {
+  background-image: url(../media/img/delivery-guy-1424808_1280.png);
+  height: 200px;
+  background-position: top;
+  background-size: cover;
+  margin-bottom: 40px;
+}
+
+.serv2-right {
+  padding: 20px;
+}
+
+.serv3-left {
+  background-image: url(../media/img/alfajores_choco_p-min.webp);
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+}
+
+.serv3-right {
+  padding: 20px;
+}
+
+/* fin de presentacion de sevicios */
+/* inicio imagen de corte productos 2  */
+.imagen-de-corte2 {
+  height: 200px;
+  width: 80%;
+  margin-top: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.conteinerimg {
+  height: 150px;
+  width: 80%;
+  background-image: url(../../media/img/pan_d_lado-min.webp);
+  background-position: center;
+  background-size: cover;
+  margin: 0 auto;
+}
+
+/* fin imagen de corte productos 2  */
+/* inico de lista de productos pagProductos.html */
+.tablas-prodcuctos {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* fin de lista de productos pagProductos.html */
+.center_recetas {
+  margin: 0 auto;
+  width: 90vw;
+}
+
+.login-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F2F2F2;
+  width: 70vw;
+  height: 70vh;
+  max-width: 600px;
+  max-height: 600px;
+  border: 1px solid black;
+  border-radius: 25px;
+  margin: auto;
+  padding: 15px;
+}
+
+.carrito-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F2F2F2;
+  width: 90vw;
+  height: 80vh;
+  max-width: 600px;
+  max-height: 600px;
+  border: 1px solid black;
+  border-radius: 25px;
+  margin: auto;
+  padding: 15px;
+  overflow: auto;
+}
+
+.texto-about {
+  width: 80vw;
+  height: 60vh;
+  border: 0px solid black;
+  border-radius: 25px;
+  padding: 20px;
+  text-shadow: 0 0 1px black;
+  background-color: rgba(255, 255, 255, 0.062);
+  margin: 0 auto;
+  margin-bottom: 60px;
+  overflow: auto;
+}
+
+.list-group-item.active {
+  background-color: #F20707;
+  border-color: #F20707;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Es el lugar, de la pagina donde están la carta completa con su descripción, precios y en la cual puedes agregar a el carrito ">
+    <meta name="keywords" content="HTML, CSS, JS, free gluten, sin tacc, sin gluten, recetas, venta, lista, productos, caracteristicas, info">
+    <!-- inico del elacae a boostrak 5.2.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- fin de elace a bootstrap -->
+    <!-- inicio de fontsAweson -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- fin de fontsAweson -->
+    <!-- icono de barra navegador -->
+    <link rel="shortcut icon" href="../media/img/icono_obrador.png" type="image/x-icon">
+    <!-- icono de barra navegador -->
+
+    <!-- inicio de estilos locales -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- fin de incios locales -->
+    <title>Listado de productos del Obrador, con descripción de ingredietes</title>
+
+</head>
+
+<body>
+    <header>
+
+        <!-- barra de nav inicia -->
+        <nav class="navbar navbar-expand-sm  navbar-dark">
+            <!-- sin bg-dark modo oscuro -->
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html"><img src="../media/img/icono_obrador.png" alt="icono sin fondo">El
+                    Obrador</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="collapsibleNavbar">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/recetas.html">Recetas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/login.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/carrito.html"><i class="fa-solid fa-cart-shopping"></i> <span class="badge bg-danger rounded-pill " id="carrito">3</span></a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- barra de nav finial -->
+    <!--inicio de carrousel  (productos)-->
+    <div class="carrousel">
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+            </div>
+
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="../media/img/pan_dulce_duo-min.webp" alt="Pan dulce" class="d-block  mx-auto img-fluid ">
+                </div>
+                <div class="carousel-item">
+                    <img src="../media/img/tarta_costado-min.webp" alt="tarta de jamon y queso" class="d-block  mx-auto img-fluid">
+                </div>
+                <div class="carousel-item">
+                    <img src="../media/img/pastafrola_cerca-min.webp" alt="pastafrola" class="d-block  mx-auto img-fluid">
+                </div>
+            </div>
+
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+    <!--fin de carrousel  (productos)-->
+
+    <!-- inicio encabezado productos -->
+    <h2> Productos </h2>
+    <!-- fin encabezado productos -->
+
+    <!-- categorias de productos -->
+    <div class="container">
+    <h3>Entrantes</h3>
+
+    <!-- inicio de lista de productos -->
+    
+        <div class="tablas-prodcuctos">
+
+            <table class="table table-xl-responsive">
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Raviolones de espinaca</th>
+                            <td>Raviolones rellenos de espinaca, ricotta y parmesano con masa de tomates secos</td>
+                            <td>560$</td>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger"><i
+                                        class="fa-solid fa-cart-shopping"></i></button></td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">Ensalada caprese</th>
+                            <td>Tomate ecológico, muzarella de bufala,rúcula y aceite de oliva</td>
+                            <td>250$</td>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger"><i
+                                        class="fa-solid fa-cart-shopping"></i></button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Pan de queso</th>
+                            <td>Pancitos recién horneados de queso </td>
+                            <td>550$</td>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger"><i
+                                        class="fa-solid fa-cart-shopping"></i></button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Pan de molde con semillas</th>
+                            <td>Pan de molde, de 600gr , con sésamo, lino, chía y avena </td>
+                            <td>550$</td>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger"><i
+                                        class="fa-solid fa-cart-shopping"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </table>
+        </div>
+    </div>
+
+    <!-- fin de lista de productos -->
+    <!-- inicio imagen de corte productos 2 -->
+    <div class="imagen-de-corte2">
+    <div class="conteinerimg"></div>
+    </div>
+
+
+    <!-- fin imagen de corte productos 2 -->
+
+    <!-- categorias de productos 2 -->
+    <div class="container">
+    <h3>Plato principal</h3>
+    <!-- inicio de lista de productos -->
+        <div class="tablas-prodcuctos">
+
+            <table class="table table-xl-responsive">
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Raviolones de espinaca</th>
+                            <td>Raviolones rellenos de espinaca, ricotta y parmesano con masa de tomates secos</td>
+                            <td>560$</td>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger"><i
+                                        class="fa-solid fa-cart-shopping"></i></button></td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">Lasaña de pollo y verduras</th>
+                            <td>Lasaña artesanal, de supremas de pollos cocidas al tomillo y verduras de temporada</td>
+                            <td>250$</td>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger"><i
+                                        class="fa-solid fa-cart-shopping"></i></button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Milanesas de carne</th>
+                            <td>Milanesas de novillo, empanadas con nuestra mezcla especial de pan rallado sin gluten</td>
+                            <td>550$</td>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger"><i
+                                        class="fa-solid fa-cart-shopping"></i></button></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Strudel de verduras</th>
+                            <td>Strudel, con masa de hojaldre artesanal y relleno de verduras de temporada</td>
+                            <td>550$</td>
+                            <td><button type="button" class="btn btn-sm btn-outline-danger"><i
+                                        class="fa-solid fa-cart-shopping"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </table>
+        </div>
+    </div>
+
+    <!-- fin de lista de productos2 -->
+    <!--inicio footer  -->
+    <footer>
+        <p>Todos los derechos de copyright reservados</p>
+        <div class="redes">
+            <a href="https://www.facebook.com/?locale=es_LA">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+
+    </footer>
+    <!--fin footer  -->
+
+    <!-- link js main.js -->
+    <script src="../js/main.js"></script>
+    <!-- link a jscrit bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <!-- fin a jcritp bootsrtap -->
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lugar donde podras iniciar sesion en nuestra página, con tú usuario/contraseña, recuperar dichos datos, o darte de alta en pagina, para poder disftutar de todos sus veneficios  ">
+    <meta name="keywords" content="HTML, CSS, JS, free gluten, inicio de sesion, login, register, recuperacion, password, contraseña,">
+    <!-- inico del elacae a boostrak 5.2.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <!-- fin de elace a bootstrap -->
+    <!-- inicio de fontsAweson -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- fin de fontsAweson -->
+    <!-- icono de barra navegador -->
+    <link rel="shortcut icon" href="../media/img/icono_obrador.png" type="image/x-icon">
+    <!-- icono de barra navegador -->
+
+    <!-- inicio de estilos locales -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- fin de incios locales -->
+    <title>La pagina en la cual puedes loguearte y disfrutar de todos sus  veneficios</title>
+
+</head>
+
+<body>
+    <header>
+
+        <!-- barra de nav inicia -->
+        <nav class="navbar navbar-expand-sm  navbar-dark">
+            <!-- sin bg-dark modo oscuro -->
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html"><img src="../media/img/icono_obrador.png"
+                        alt="icono del Obrador">El Obrador </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse " id="collapsibleNavbar">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/productos.html">Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/recetas.html">Recetas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/login.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../pages/carrito.html"><i
+                                    class="fa-solid fa-cart-shopping"></i></a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- barra de nav finial -->
+
+    <body>
+
+
+        <!-- inico del main -->
+
+        <main class="login-main">
+            <!--inico de el box de login  -->
+                <div class="login-box">
+                    <form>
+                        <div class="sm-3">
+                            <h4>login</h4>
+                            <label for="exampleInputEmail1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp">
+                            <div id="emailHelp" class="form-text">No comparta sus datos</div>
+                        </div>
+                        <div class="sm-3">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1">
+                        </div>
+                        <div class="sm-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">Recordar login</label>
+                            <a href="#">recuperar contraseña</a>
+                        </div>
+                        <button type="submit" class="btn btn-primary">login</button>
+                        <button type="submit" class="btn btn-secondary">registro</button>
+                    </form>
+                </div>
+            <!--fin de el box de login  -->    
+        </main>
+
+        <!--inicio footer  -->
+        <footer>
+            <p>Todos los derechos de copyright reservados</p>
+            <div class="redes">
+                <a href="https://www.facebook.com/?locale=es_LA">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+
+        </footer>
+        <!--fin footer  -->
+        <!-- link js main.js -->
+        <script src="../js/main.js"></script>
+
+        <!-- link a jscrit bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+        <!-- fin a jcritp bootsrtap -->
+    </body>
+
+</html>

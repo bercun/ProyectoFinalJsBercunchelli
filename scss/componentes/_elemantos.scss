@@ -1,0 +1,189 @@
+/* inicio de presentacion de productos */
+.prod-left {
+    background-image: url(../media/img/pastafrola_cerca-min.webp);
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 40px;
+
+
+}
+
+.prod-right {
+    padding: 20px;
+}
+
+.prod2-left {
+    background-image: url(../media/img/pan_d_lado-min.webp);
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 40px;
+}
+
+.prod2-right {
+    padding: 20px;
+}
+
+.prod3-left {
+    background-image: url(../media/img/pasta_rellena-min.webp);
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.prod3-right {
+    padding: 20px;
+}
+
+/* fin de presentacion de productos */
+/* inicio de presentacion de sevicios */
+
+.serv-left {
+    background-image: url(../media/img/yo_cortando.webp);
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 40px;
+
+}
+
+.serv-right {
+    padding: 20px;
+}
+
+.serv2-left {
+    background-image: url(../media/img/delivery-guy-1424808_1280.png);
+    height: 200px;
+    background-position: top;
+    background-size: cover;
+    margin-bottom: 40px;
+
+}
+
+.serv2-right {
+    padding: 20px;
+}
+
+.serv3-left {
+    background-image: url(../media/img/alfajores_choco_p-min.webp);
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.serv3-right {
+    padding: 20px;
+}
+
+/* fin de presentacion de sevicios */
+
+
+
+
+
+/* inicio imagen de corte productos 2  */
+
+.imagen-de-corte2 {
+    height: 200px;
+    width: 80%;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.conteinerimg {
+    height: 150px;
+    width: 80%;
+    background-image: url(../../media/img/pan_d_lado-min.webp);
+    background-position: center;
+    background-size: cover;
+    margin: 0 auto;
+}
+
+
+/* fin imagen de corte productos 2  */
+
+/* inico de lista de productos pagProductos.html */
+
+.tablas-prodcuctos {
+    width: 90%;
+    margin: 0 auto;
+
+}
+
+/* fin de lista de productos pagProductos.html */
+// tarjeta de recetas
+
+.center_recetas {
+    margin: 0 auto;
+    width: 90vw;
+
+}
+
+// formato de login-box
+.login-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $fondo_res;
+    width: 70vw;
+    height: 70vh;
+    max-width: 600px;
+    max-height: 600px;
+    border: 1px solid $negro;
+    border-radius: 25px;
+    margin: auto;
+    padding: 15px;
+
+}
+
+// formato de login-box
+
+// inicio formato carrito-box
+.carrito-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $fondo_res;
+    width: 90vw;
+    height: 80vh;
+    max-width: 600px;
+    max-height: 600px;
+    border: 1px solid $negro;
+    border-radius: 25px;
+    margin: auto;
+    padding: 15px;
+    overflow: auto;
+
+}
+//fin formato carrito-box
+
+
+// contendor de texto-about
+
+.texto-about{
+    width: 80vw;
+    height: 60vh;
+    border: 0px solid $negro;
+    border-radius: 25px;
+    padding: 20px;
+    text-shadow: 0 0 1px $negro;
+    background-color: rgba(255, 255, 255, 0.062);
+    margin: 0  auto;
+    margin-bottom: 60px;
+    overflow: auto;
+
+ }
+
+//  modificador tarjetas de productos
+.list-group-item.active {
+    background-color: $color1;
+    border-color: $color1;
+}
+//  fin modificador tarjetas de productos
+
+// fin contendor de texto-about

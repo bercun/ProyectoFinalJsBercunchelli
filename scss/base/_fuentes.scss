@@ -1,0 +1,30 @@
+
+h1{
+    text-shadow: 0 0 5px $negro;
+}
+
+h2 {
+    text-align: center;
+    background-color: $fondo;
+    padding: 20px;
+    font-weight: bold;
+    color: $color1;
+    text-shadow: 0 0 2px white;
+    margin-bottom: 0;
+}
+
+/* inico de encabezado de productos pagProductos.html */
+h3 {
+    margin-left: 10px;
+}
+
+/* fin  de encabezado de productos pagProductos.html */
+// formato de titulo about
+
+.titulo-about{
+    background-color: rgba(255, 255, 255, 0.034)!important;
+    margin-bottom: 50px;
+    padding-top: 30px;
+}
+
+// fin formato de about

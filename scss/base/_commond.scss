@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*formato de la pagina para que no se vea la scrollbar horizonatal  */
+body {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+
+// fondo a reutilizar
+
+@mixin fondo-logo-rep{
+
+    width: 100vw;
+    height:100vh;
+    background-image: url(../media/img/icono_obrador.png);
+    background-repeat: repeat;
+    background-size: 1.5%;
+    padding-top: 40px;
+}
+// fondo a reutilizar
+// main de login
+.login-main{
+    @include fondo-logo-rep;
+}
+// fin main del login
+
+
+// main about
+
+.main-about{
+    width: 100vw;
+    height:1500px;
+    background-color: #bf0b2c;
+    background-image: linear-gradient(135deg, #bf0b2c 0%, #8c182d 12%, #d94169 23%, #ae4c4c 36%, #f2f2f2 80%, #ffffff 100%);
+
+}
+// fin main about
+// inicio main carrito
+.main-carrito{
+    @include fondo-logo-rep;
+}
+// fin main carrito
+
+
+
+/* inicio de footer */
+
+
+footer {
+    background-color: $fondo;
+    color: $negro;
+    padding: 5px;
+    text-align: center;
+    font-size: medium;
+    margin-top: 40px;
+}
+
+footer .redes {
+    background-color: $fondo_res;
+    color:$negro;
+    padding: 5px;
+    text-align: center;
+    font-size: 30px;
+}
+
+footer a {
+    color: $color2;
+    font-weight: bold;
+}
+
+footer .redes i {
+    color: $color1;
+    font-size: 20px;
+    letter-spacing: 30px;
+
+}
+
+footer .redes a {
+    text-decoration: none;
+
+}
+
+/* fin de footer */

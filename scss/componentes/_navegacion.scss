@@ -1,0 +1,24 @@
+/* iniciobarra de navegacion */
+.navbar {
+    background-color: #D9D9D9;
+
+}
+
+.navbar-brand {
+    color: $color1 !important;
+/* se usa el !important para superponer a otro codigo el mismo modificador */
+    font-weight: bold;
+    font-size: larger;
+
+}
+
+.navbar-brand img {
+    height: 70px;
+}
+
+/* color de iconos de nav */
+.nav-link {
+    color: $negro;
+}
+
+/* fin de barra de navegacion */
