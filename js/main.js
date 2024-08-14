@@ -1,4 +1,4 @@
-//! defininos valiables globales
+//! defininos variables globales
 let total = 0;
 let unidades = 0;
 
