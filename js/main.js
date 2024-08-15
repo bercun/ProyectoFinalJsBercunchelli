@@ -17,10 +17,10 @@ let despedida = 'Hasta la próxima';
 let carrito = []; 
 
 //? array de productos
-let productos = [
+const productosEntrantes = [
     {id: 1, 
-    nombre: 'Raviolones de espinaca',
-    descripcion: 'Raviolones rellenos de espinaca, ricotta y parmesano con masa de tomates secos',
+    nombre: 'Carpacio de gambas',
+    descripcion: 'Gambas de Denia con vinagreta de lima,rúcula y tomate cherry',
     precio: 560,
     },
     {id: 2, 
@@ -42,55 +42,35 @@ let productos = [
     
 ];
 
+const productosPrincipales = [
+    {id:1, 
+    nombre: 'Raviolones de espinaca', 
+    descripcion: 'Raviolones rellenos de espinaca, ricotta y parmesano con masa de tomates secos', 
+    precio: 560},
+    {id:2,  
+    nombre: 'Lasaña de pollo y verduras',
+    descripcion: 'Lasaña artesanal, de supremas de pollos cocidas al tomillo y verduras de temporada',
+    precio: 250},
+    {id:3,
+    nombre: 'Milanesas de carne',
+    descripcion: 'Milanesas de novillo, empanadas con nuestra mezcla especial de pan rallado sin gluten',
+    precio: 550},
+    {id:4,
+    nombre: 'Strudel de verduras',
+    descripcion: 'Strudel, con masa de hojaldre artesanal y relleno de verduras de temporada',
+    precio: 550},
+];
 
-/* <table class="table table-xl-responsive">
-<table class="table">
-    <thead class="thead-light">
-        <tr>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Precio</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th scope="row">Raviolones de espinaca</th>
-            <td>Raviolones rellenos de espinaca, ricotta y parmesano con masa de tomates secos</td>
-            <td>560$</td>
-            <td><button type="button" class="btn btn-sm btn-outline-danger"><i
-                        class="fa-solid fa-cart-shopping"></i></button></td>
 
-        </tr>
-        <tr>
-            <th scope="row">Ensalada caprese</th>
-            <td>Tomate ecológico, muzarella de bufala,rúcula y aceite de oliva</td>
-            <td>250$</td>
-            <td><button type="button" class="btn btn-sm btn-outline-danger"><i
-                        class="fa-solid fa-cart-shopping"></i></button></td>
-        </tr>
-        <tr>
-            <th scope="row">Pan de queso</th>
-            <td>Pancitos recién horneados de queso </td>
-            <td>550$</td>
-            <td><button type="button" class="btn btn-sm btn-outline-danger"><i
-                        class="fa-solid fa-cart-shopping"></i></button></td>
-        </tr>
-        <tr>
-            <th scope="row">Pan de molde con semillas</th>
-            <td>Pan de molde, de 600gr , con sésamo, lino, chía y avena </td>
-            <td>550$</td>
-            <td><button type="button" class="btn btn-sm btn-outline-danger"><i
-                        class="fa-solid fa-cart-shopping"></i></button></td>
-        </tr>
-    </tbody>
-</table>
-</table> */
+//! funciones
 
-const tablaProductos = document.querySelector('#tablaProductos');
 
-function mostrarProductos() {
-    productos.forEach((producto) => {
-        tablaProductos.innerHTML += `
+
+const tablaEntrantes = document.querySelector('#tablaEntrantes');
+
+function mostrarEntrantes() {
+    productosEntrantes.forEach((producto) => {
+        tablaEntrantes.innerHTML += `
         <tr>
             <th scope="row">${producto.nombre}</th>
             <td>${producto.descripcion}</td>
@@ -102,7 +82,26 @@ function mostrarProductos() {
     });
 }
 
-mostrarProductos();
+const tablaPrincipales = document.querySelector('#tablaPrincipales');
+    
+function mostrarPrincipales() {
+        productosPrincipales.forEach((producto) => {
+        tablaPrincipales.innerHTML += `
+        <tr>
+            <th scope="row">${producto.nombre}</th>
+            <td>${producto.descripcion}</td>
+            <td>${producto.precio}</td>
+            <td><button type="button" class="btn btn-sm btn-outline-danger" onclick="agregarAlCarrito(${producto.id})"><i
+                        class="fa-solid fa-cart-shopping"></i></button></td>
+        </tr>
+        `;
+    });
+}
+//? llado a las funciones
+
+mostrarEntrantes();
+mostrarPrincipales();
+
 
 // localStorage.setItem('carrito', JSON.stringify(carrito));
 // localStorage.setItem('productos', JSON.stringify(productos));
