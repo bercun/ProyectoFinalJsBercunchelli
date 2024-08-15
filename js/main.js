@@ -1,6 +1,15 @@
 //! defininos variables globales
-let total = 0;
+let totalPagar = 0;
 let unidades = 0;
+
+
+//? mensajes 
+
+let saludos = 'Bienvenidos al sistema de gestión de productos';
+let addproduct = 'se agrego producto';
+let delProduct = 'se elimino producto';
+let despedida = 'Hasta la próxima';
+
 
 //! definimos objetos globales
 
@@ -29,11 +38,7 @@ let productos = [
     descripcion: 'Pan de molde, de 600gr , con sésamo, lino, chía y avena',
     precio: 550,
     },
-    {id: 5,
-    nombre: 'Pan de molde con semillas',
-    descripcion: 'Pan de molde, de 600gr , con sésamo, lino, chía y avena',
-    precio: 550,
-    },
+    
     
 ];
 
@@ -81,9 +86,24 @@ let productos = [
 </table>
 </table> */
 
+const tablaProductos = document.querySelector('#tablaProductos');
 
+function mostrarProductos() {
+    productos.forEach((producto) => {
+        tablaProductos.innerHTML += `
+        <tr>
+            <th scope="row">${producto.nombre}</th>
+            <td>${producto.descripcion}</td>
+            <td>${producto.precio}</td>
+            <td><button type="button" class="btn btn-sm btn-outline-danger" onclick="agregarAlCarrito(${producto.id})"><i
+                        class="fa-solid fa-cart-shopping"></i></button></td>
+        </tr>
+        `;
+    });
+}
 
+mostrarProductos();
 
-localStorage.setItem('carrito', JSON.stringify(carrito));
-localStorage.setItem('productos', JSON.stringify(productos));
+// localStorage.setItem('carrito', JSON.stringify(carrito));
+// localStorage.setItem('productos', JSON.stringify(productos));
 
