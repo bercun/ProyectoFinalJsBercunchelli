@@ -43,31 +43,33 @@ const productosEntrantes = [
 ];
 
 const productosPrincipales = [
-    {id:1, 
+    {id:11, 
     nombre: 'Raviolones de espinaca', 
     descripcion: 'Raviolones rellenos de espinaca, ricotta y parmesano con masa de tomates secos', 
     precio: 560},
-    {id:2,  
+    {id:12,  
     nombre: 'Lasaña de pollo y verduras',
     descripcion: 'Lasaña artesanal, de supremas de pollos cocidas al tomillo y verduras de temporada',
     precio: 250},
-    {id:3,
+    {id:13,
     nombre: 'Milanesas de carne',
     descripcion: 'Milanesas de novillo, empanadas con nuestra mezcla especial de pan rallado sin gluten',
     precio: 550},
-    {id:4,
+    {id:14,
     nombre: 'Strudel de verduras',
     descripcion: 'Strudel, con masa de hojaldre artesanal y relleno de verduras de temporada',
     precio: 550},
 ];
 
 
-//! funciones
 
-
-
+//! definimos variables de los elementos del DOM
 const tablaEntrantes = document.querySelector('#tablaEntrantes');
+const tablaPrincipales = document.querySelector('#tablaPrincipales');
+let btnAgregar = document.querySelectorAll('.btnAgregar');
 
+
+//! funciones
 function mostrarEntrantes() {
     productosEntrantes.forEach((producto) => {
         tablaEntrantes.innerHTML += `
@@ -75,14 +77,15 @@ function mostrarEntrantes() {
             <th scope="row">${producto.nombre}</th>
             <td>${producto.descripcion}</td>
             <td>${producto.precio}</td>
-            <td><button type="button" class="btn btn-sm btn-outline-danger" onclick="agregarAlCarrito(${producto.id})"><i
+            <td><button type="button" class="btn btn-sm btn-outline-danger btnAgregar" id="${producto.id}"><i
                         class="fa-solid fa-cart-shopping"></i></button></td>
         </tr>
         `;
+        actualizarBtnAgregar();
     });
 }
 
-const tablaPrincipales = document.querySelector('#tablaPrincipales');
+
     
 function mostrarPrincipales() {
         productosPrincipales.forEach((producto) => {
@@ -91,13 +94,41 @@ function mostrarPrincipales() {
             <th scope="row">${producto.nombre}</th>
             <td>${producto.descripcion}</td>
             <td>${producto.precio}</td>
-            <td><button type="button" class="btn btn-sm btn-outline-danger" onclick="agregarAlCarrito(${producto.id})"><i
+            <td><button type="button" class="btn btn-sm btn-outline-danger btnAgregar" id"${producto.id}"><i
                         class="fa-solid fa-cart-shopping"></i></button></td>
         </tr>
         `;
+        actualizarBtnAgregar();
     });
 }
-//? llado a las funciones
+function actualizarBtnAgregar() {  
+    btnAgregar = document.querySelectorAll('.btnAgregar');
+    btnAgregar.forEach((btn) => {
+        btn.addEventListener('click', agregarProducto);
+    });
+
+}
+
+function agregarProducto(e) {
+    const id = e.currentTarget.id;
+    console.log(id);
+}
+
+function eliminarProducto(id) {
+    let producto = carrito.find((producto) => producto.id === id);
+    let index = carrito.indexOf(producto);
+    carrito.splice(index, 1);
+    console.log(carrito);
+    console.log(delProduct);
+}
+
+
+
+function syncCarrito() {
+    let carritoString = JSON.stringify(carrito);
+    localStorage.setItem('carrito', carritoString);
+}
+//? llamado a las funciones
 
 mostrarEntrantes();
 mostrarPrincipales();
