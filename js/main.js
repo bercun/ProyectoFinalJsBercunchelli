@@ -62,11 +62,11 @@ const productosPrincipales = [
 ];
 
 
-
 //! definimos variables de los elementos del DOM
 const tablaEntrantes = document.querySelector('#tablaEntrantes');
 const tablaPrincipales = document.querySelector('#tablaPrincipales');
 let btnAgregar = document.querySelectorAll('.btnAgregar');
+
 
 
 //! funciones
@@ -77,61 +77,80 @@ function mostrarEntrantes() {
             <th scope="row">${producto.nombre}</th>
             <td>${producto.descripcion}</td>
             <td>${producto.precio}</td>
-            <td><button type="button" class="btn btn-sm btn-outline-danger btnAgregar" id="${producto.id}"><i
-                        class="fa-solid fa-cart-shopping"></i></button></td>
+            <td><button type="button" class="btn btn-sm btn-outline-danger btnAgregar" id="${producto.id}">
+            <i class="fa-solid fa-cart-shopping"></i></button></td>
         </tr>
         `;
-        actualizarBtnAgregar();
     });
 }
 
 
-    
 function mostrarPrincipales() {
         productosPrincipales.forEach((producto) => {
-        tablaPrincipales.innerHTML += `
+        
+            tablaPrincipales.innerHTML += `
         <tr>
             <th scope="row">${producto.nombre}</th>
             <td>${producto.descripcion}</td>
             <td>${producto.precio}</td>
-            <td><button type="button" class="btn btn-sm btn-outline-danger btnAgregar" id"${producto.id}"><i
-                        class="fa-solid fa-cart-shopping"></i></button></td>
+            <td><button type="button" class="btn btn-sm btn-outline-danger btnAgregar" id="${producto.id}">
+            <i class="fa-solid fa-cart-shopping"></i></button></td>
         </tr>
         `;
-        actualizarBtnAgregar();
     });
 }
-function actualizarBtnAgregar() {  
+
+//!funciones de eventos
+
+function actualizarBtnAgregar() {
     btnAgregar = document.querySelectorAll('.btnAgregar');
     btnAgregar.forEach((btn) => {
-        btn.addEventListener('click', agregarProducto);
+        btn.addEventListener('click', (e) => {
+            console.log(e.target.id);
+            let producto = productosEntrantes.find((producto) => producto.id == e.target.id);
+            if (!producto) {
+                producto = productosPrincipales.find((producto) => producto.id == e.target.id);
+            }
+            let productoindex = productosEntrantes.indexOf(producto);
+            carrito.push(productoindex);
+            console.log(carrito);
+            console.log(addproduct);
+        });
     });
 
-}
-
-function agregarProducto(e) {
-    const id = e.currentTarget.id;
-    console.log(id);
-}
-
-function eliminarProducto(id) {
-    let producto = carrito.find((producto) => producto.id === id);
-    let index = carrito.indexOf(producto);
-    carrito.splice(index, 1);
-    console.log(carrito);
-    console.log(delProduct);
-}
+    }
 
 
 
-function syncCarrito() {
-    let carritoString = JSON.stringify(carrito);
-    localStorage.setItem('carrito', carritoString);
-}
+    
+
+function agregarProducto() {
+        console.log(saludos);
+        }
+
+
 //? llamado a las funciones
-
 mostrarEntrantes();
 mostrarPrincipales();
+actualizarBtnAgregar();
+
+// function eliminarProducto(id) {
+//     let producto = carrito.find((producto) => producto.id === id);
+//     let index = carrito.indexOf(producto);
+//     carrito.splice(index, 1);
+//     console.log(carrito);
+//     console.log(delProduct);
+// }
+
+
+
+// function syncCarrito() {
+//     let carritoString = JSON.stringify(carrito);
+//     localStorage.setItem('carrito', carritoString);
+// }
+
+
+
 
 
 // localStorage.setItem('carrito', JSON.stringify(carrito));
