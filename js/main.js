@@ -87,7 +87,6 @@ function mostrarEntrantes() {
 
 function mostrarPrincipales() {
         productosPrincipales.forEach((producto) => {
-        
             tablaPrincipales.innerHTML += `
         <tr>
             <th scope="row">${producto.nombre}</th>
@@ -99,60 +98,34 @@ function mostrarPrincipales() {
         `;
     });
 }
-
-//!funciones de eventos
-
-function actualizarBtnAgregar() {
-    btnAgregar = document.querySelectorAll('.btnAgregar');
-    btnAgregar.forEach((btn) => {
-        btn.addEventListener('click', (e) => {
-            console.log(e.target.id);
-            let producto = productosEntrantes.find((producto) => producto.id == e.target.id);
-            if (!producto) {
-                producto = productosPrincipales.find((producto) => producto.id == e.target.id);
-            }
-            let productoindex = productosEntrantes.indexOf(producto);
-            carrito.push(productoindex);
-            console.log(carrito);
-            console.log(addproduct);
-        });
-    });
-
-    }
-
-
-
-    
-
-function agregarProducto() {
-        console.log(saludos);
-        }
-
+        
 
 //? llamado a las funciones
 mostrarEntrantes();
 mostrarPrincipales();
-actualizarBtnAgregar();
-
-// function eliminarProducto(id) {
-//     let producto = carrito.find((producto) => producto.id === id);
-//     let index = carrito.indexOf(producto);
-//     carrito.splice(index, 1);
-//     console.log(carrito);
-//     console.log(delProduct);
-// }
+updatebtnAgregar();
 
 
 
-// function syncCarrito() {
-//     let carritoString = JSON.stringify(carrito);
-//     localStorage.setItem('carrito', carritoString);
-// }
+//!funciones de eventos
+
+
+function updatebtnAgregar() {
+    btnAgregar = document.querySelectorAll('.btnAgregar');
+    btnAgregar.forEach((boton) => {
+    boton.addEventListener('click', () => {
+    let idbtn = boton.id;
+    console.log(idbtn);
+    let producto = productosEntrantes.find((producto) => producto.id == idbtn);
+    carrito.push(producto);
+    console.log(carrito);
+        });
+    });
+}
+    
 
 
 
 
 
-// localStorage.setItem('carrito', JSON.stringify(carrito));
-// localStorage.setItem('productos', JSON.stringify(productos));
 
