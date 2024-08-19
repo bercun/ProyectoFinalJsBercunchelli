@@ -9,7 +9,7 @@ let saludos = 'Bienvenidos al sistema de gestión de productos';
 let addproduct = 'se agrego producto';
 let delProduct = 'se elimino producto';
 let despedida = 'Hasta la próxima';
-
+let eleccionDecompra = [];
 
 //! definimos objetos globales
 
@@ -61,15 +61,17 @@ const productosPrincipales = [
     precio: 550},
 ];
 
+const carta = [...productosEntrantes, ...productosPrincipales];
+
 
 //! definimos variables de los elementos del DOM
 const tablaEntrantes = document.querySelector('#tablaEntrantes');
 const tablaPrincipales = document.querySelector('#tablaPrincipales');
 let btnAgregar = document.querySelectorAll('.btnAgregar');
+const nCarrito = document.querySelector('#carrito');
 
 
-
-//! funciones
+//! funciones para mostrar productos en la tabla
 function mostrarEntrantes() {
     productosEntrantes.forEach((producto) => {
         tablaEntrantes.innerHTML += `
@@ -104,28 +106,61 @@ function mostrarPrincipales() {
 mostrarEntrantes();
 mostrarPrincipales();
 updatebtnAgregar();
+vaciarCarrito()
+syncnCarrito();
+localCarrito();
 
-
-
-//!funciones de eventos
+//!funciones de eventos y acciones
 
 
 function updatebtnAgregar() {
     btnAgregar = document.querySelectorAll('.btnAgregar');
+    
     btnAgregar.forEach((boton) => {
-    boton.addEventListener('click', () => {
-    let idbtn = boton.id;
-    console.log(idbtn);
-    let producto = productosEntrantes.find((producto) => producto.id == idbtn);
-    carrito.push(producto);
-    console.log(carrito);
-        });
+    boton.addEventListener('click', agregarCarrito);
     });
 }
-    
 
+function agregarCarrito() {
+    let idProducto = this.id;
+    // console.log( idProducto);
+    // console.log(this);
+    eleccionDecompra = carta.find((producto) => producto.id == idProducto);
+    if (carrito.some((producto) => producto.id == idProducto)) {
+        eleccionDecompra.cantidad++;
+        
+    }else{
+        eleccionDecompra.cantidad = 1;
+        carrito.push(eleccionDecompra);
 
+    }
+    syncnCarrito();
+    localCarrito();
+}   
 
+function syncnCarrito() {
+    nCarrito.innerText = '';
+    unidades = carrito.length;
+    nCarrito.innerText = unidades; 
+}
 
+//? guardamos en el local storage
 
+function localCarrito() {    
+    localStorage.setItem('local-carrito', JSON.stringify(carrito));
+}
+
+function cargarCarrito() {
+    if (localStorage.getItem('local-carrito')) {
+        carrito = JSON.parse(localStorage.getItem('local-carrito'));
+        syncnCarrito();
+    }
+}
+
+function vaciarCarrito() {
+    carrito = [];
+    localStorage.removeItem('local-carrito');
+    syncnCarrito();
+    localCarrito();
+}
 
