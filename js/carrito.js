@@ -14,7 +14,9 @@ let delProduct = 'se elimino producto';
 
 const tablaCompras = document.querySelector("#tablaCompras");
 const nCarrito = document.querySelector('#carrito-box');
-
+const sumaCompra = document.querySelector('#sumaCompra');
+let btnSumar = document.querySelectorAll('.sumar');
+let btnRestar = document.querySelectorAll('.restar');
 //? local storage
 
 function cargarCarrito() {
@@ -23,39 +25,48 @@ function cargarCarrito() {
         syncnCarrito();
     }
 }
-console.log(carrito);
 
 //? llamadas de funciones
 
 cargarCarrito();
 mostrarCarrito();
-
-
+total();
+updatebtnSumar();
+updatebtnRestar();
+console.log(btnRestar);
 //? funciones de eventos y acciones
 
 function mostrarCarrito() {
+    i = 1;
     tablaCompras.innerHTML = '';
     carrito.forEach((producto) => {
         tablaCompras.innerHTML += `
         <tr>
-            <th scope="row">${producto.id}</th>
+            <th scope="row">${i}</th>
             <td>${producto.nombre}</td>
             <td>${producto.precio}</td>
             <td><div class="input-group">
                 <div class="input-group-prepend">
-                    <button class="btn btn-outline-secondary" type="button"
-                        onclick="decrementar()">-</button>
+                    <button class="btn btn-outline-secondary restar " type="button" id="${producto.id}" >-</button>
+
                 </div>
                 <input type="text"  class="form-control-w5" value="${producto.cantidad}">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-secondary" type="button"
-                        onclick="incrementar()">+</button>
+                    <button class="btn btn-outline-secondary sumar " type="button"
+                        id="${producto.id}" >+</button>
                 </div></td>
         </tr>
         
         `;
+        i++;
+        updatebtnSumar();
+        updatebtnRestar();
     });
 }
+
+
+
+
 
 function syncnCarrito() {
     nCarrito.innerText = '';
@@ -63,63 +74,48 @@ function syncnCarrito() {
     nCarrito.innerText = unidades; 
 }
 
+function localCarrito() {    
+    localStorage.setItem('local-carrito', JSON.stringify(carrito));
+}
+function total () {
+    totalPagar = 0;
+    carrito.forEach((producto) => {
+        totalPagar += producto.precio * producto.cantidad;
+    });
+    sumaCompra.innerHTML = totalPagar;
+}
 
-/* <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>pizza</td>
-                            <td>500</td>
-                            <td><div class="input-group">
-                                <div class="input-group-prepend">
-                                    <button class="btn btn-outline-secondary" type="button"
-                                        onclick="decrementar()">-</button>
-                                </div>
-                                <input type="text"  class="form-control-w5" value="0">
-                                <div class="input-group-append">
-                                    <button class="btn btn-outline-secondary" type="button"
-                                        onclick="incrementar()">+</button>
-                                </div></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Raviolones de espinaca</td>
-                            <td>600</td>
-                            <td>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <button class="btn btn-outline-secondary" type="button"
-                                            onclick="decrementar()">-</button>
-                                    </div>
-                                    <input type="text"  class="form-control-w5" value="0">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary" type="button"
-                                            onclick="incrementar()">+</button>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Pastafrola membrillo</td>
-                            <td>300</td>
-                            <td>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <button class="btn btn-outline-secondary" type="button"
-                                            onclick="decrementar()">-</button>
-                                    </div>
-                                    <input type="text"  class="form-control-w5" value="0">
-                                    <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary" type="button"
-                                            onclick="incrementar()">+</button>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><h3>Total</h3></td>
-                            <td></td>
-                            <td><h3>1400</h3></td>
-                            <td><button type="button" class="btn btn-danger">Pagar</button></td>
-                        </tr>
-                    </tbody> */
+function updatebtnSumar() { 
+    btnSumar = document.querySelectorAll('.sumar');
+    btnSumar.forEach((boton) => {
+        boton.addEventListener('click', sumarUnidad);
+    }); 
+}
+function updatebtnRestar() {
+    btnRestar = document.querySelectorAll('.restar');
+    btnRestar.forEach((boton) => {
+        boton.addEventListener('click', restarUnidad);
+    });
+}
+
+
+function sumarUnidad() {
+    let idProducto = this.id;
+    eleccionDecompra = carrito.find((producto) => producto.id == idProducto);
+    eleccionDecompra.cantidad++;
+    localCarrito();
+    mostrarCarrito();    
+}
+function restarUnidad() {
+    let idProducto = this.id;   
+    eleccionDecompra = carrito.find((producto) => producto.id == idProducto);
+    if (eleccionDecompra.cantidad > 1) {
+        eleccionDecompra.cantidad--;
+    }else{
+        carrito = carrito.filter((producto) => producto.id != idProducto);
+    }
+    localCarrito();
+    mostrarCarrito();
+}
+    
+
