@@ -1,6 +1,7 @@
 //! defininos variables globales
 let totalPagar = 0;
 let unidades = 0;
+let eleccionDecompra = [];
 
 
 //? mensajes 
@@ -9,12 +10,12 @@ let saludos = 'Bienvenidos al sistema de gestión de productos';
 let addproduct = 'se agrego producto';
 let delProduct = 'se elimino producto';
 let despedida = 'Hasta la próxima';
-let eleccionDecompra = [];
+
 
 //! definimos objetos globales
 
 //? array inicial del carrito
-let carrito = []; 
+let carrito = JSON.parse(localStorage.getItem('local-carrito')) || []; 
 
 //? array de productos
 const productosEntrantes = [
@@ -68,7 +69,7 @@ const carta = [...productosEntrantes, ...productosPrincipales];
 const tablaEntrantes = document.querySelector('#tablaEntrantes');
 const tablaPrincipales = document.querySelector('#tablaPrincipales');
 let btnAgregar = document.querySelectorAll('.btnAgregar');
-const nCarrito = document.querySelector('#carrito');
+const nCarrito = document.querySelector('#carrito-box');
 
 
 //! funciones para mostrar productos en la tabla
@@ -106,7 +107,7 @@ function mostrarPrincipales() {
 mostrarEntrantes();
 mostrarPrincipales();
 updatebtnAgregar();
-vaciarCarrito()
+// vaciarCarrito();
 syncnCarrito();
 localCarrito();
 
