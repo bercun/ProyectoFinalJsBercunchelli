@@ -74,6 +74,7 @@ const nCarrito = document.querySelector('#carrito-box');
 
 //! funciones para mostrar productos en la tabla
 function mostrarEntrantes() {
+    if(tablaEntrantes) {
     productosEntrantes.forEach((producto) => {
         tablaEntrantes.innerHTML += `
         <tr>
@@ -85,10 +86,14 @@ function mostrarEntrantes() {
         </tr>
         `;
     });
+    }else{
+    console.warn('no hay tabala de entrantes');
+    }
 }
 
 
 function mostrarPrincipales() {
+    if(tablaPrincipales) {
         productosPrincipales.forEach((producto) => {
             tablaPrincipales.innerHTML += `
         <tr>
@@ -99,7 +104,10 @@ function mostrarPrincipales() {
             <i class="fa-solid fa-cart-shopping"></i></button></td>
         </tr>
         `;
-    });
+        });
+    }else{
+        console.warn('no hay tabla de principales');
+    }   
 }
         
 
