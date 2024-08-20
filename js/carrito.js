@@ -2,7 +2,7 @@
 let totalPagar = 0;
 let unidades = 0;
 let eleccionDecompra = [];
-let carrito = [];
+let carrito = JSON.parse(localStorage.getItem('local-carrito')) || []; 
 
 //? mensajes
 let despeida = 'gracias por su compra';
@@ -46,12 +46,13 @@ function mostrarCarrito() {
                     <button class="btn btn-outline-secondary" type="button"
                         onclick="decrementar()">-</button>
                 </div>
-                <input type="text"  class="form-control-w5" value="0">
+                <input type="text"  class="form-control-w5" value="${producto.cantidad}">
                 <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="button"
                         onclick="incrementar()">+</button>
                 </div></td>
         </tr>
+        
         `;
     });
 }
