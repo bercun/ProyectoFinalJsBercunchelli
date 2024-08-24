@@ -19,11 +19,9 @@ metodos de busqueda y filtrados por arrays
 ****objetos*****
 
 carrito
-carrito.usr
 carrito.nombre
 carrito.precio
 carrito.unidades
-carrito.iva
 carrito.suma=carrito.precio* carrito.unidades
 carrito.unidadesTotal
 
@@ -33,6 +31,7 @@ unidadesTotales
 productos
 carrito
 usuario
+
 
 ****operaciones***
 

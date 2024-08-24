@@ -17,6 +17,7 @@ const nCarrito = document.querySelector('#carrito-box');
 const sumaCompra = document.querySelector('#sumaCompra');
 let btnSumar = document.querySelectorAll('.sumar');
 let btnRestar = document.querySelectorAll('.restar');
+let btnVaciar = document.querySelector('#vaciar');
 //? local storage
 
 function cargarCarrito() {
@@ -33,7 +34,9 @@ mostrarCarrito();
 total();
 updatebtnSumar();
 updatebtnRestar();
-console.log(btnRestar);
+vaciarCompra();
+
+
 //? funciones de eventos y acciones
 
 function mostrarCarrito() {
@@ -82,7 +85,7 @@ function total () {
     carrito.forEach((producto) => {
         totalPagar += producto.precio * producto.cantidad;
     });
-    sumaCompra.innerHTML = totalPagar;
+    sumaCompra.innerHTML =  totalPagar;
 }
 
 function updatebtnSumar() { 
@@ -104,7 +107,8 @@ function sumarUnidad() {
     eleccionDecompra = carrito.find((producto) => producto.id == idProducto);
     eleccionDecompra.cantidad++;
     localCarrito();
-    mostrarCarrito();    
+    mostrarCarrito();
+    total();    
 }
 function restarUnidad() {
     let idProducto = this.id;   
@@ -116,6 +120,19 @@ function restarUnidad() {
     }
     localCarrito();
     mostrarCarrito();
+    total();
 }
-    
 
+function vaciarCompra() {
+    btnVaciar.addEventListener('click', vaciarCarrito); 
+}
+
+
+function vaciarCarrito() {
+    carrito = [];
+    localCarrito();
+    mostrarCarrito();
+    total();
+    syncnCarrito();
+    
+}   
