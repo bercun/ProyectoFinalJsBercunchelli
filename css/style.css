@@ -38,7 +38,7 @@ body {
 
 /* inicio de footer */
 footer {
-  background-color: white;
+  background-color: #ffffff;
   color: black;
   padding: 5px;
   text-align: center;
@@ -76,7 +76,7 @@ h1 {
 
 h2 {
   text-align: center;
-  background-color: white;
+  background-color: #ffffff;
   padding: 20px;
   font-weight: bold;
   color: #F20707;
@@ -169,7 +169,7 @@ h3 {
 }
 
 .bg-primary {
-  background-color: white !important;
+  background-color: #ffffff !important;
 }
 
 .sombras-logo {

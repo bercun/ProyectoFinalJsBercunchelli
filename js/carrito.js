@@ -92,8 +92,10 @@ function updatebtnSumar() {
     btnSumar = document.querySelectorAll('.sumar');
     btnSumar.forEach((boton) => {
         boton.addEventListener('click', sumarUnidad);
-    }); 
+    });
 }
+
+
 function updatebtnRestar() {
     btnRestar = document.querySelectorAll('.restar');
     btnRestar.forEach((boton) => {
@@ -108,8 +110,16 @@ function sumarUnidad() {
     eleccionDecompra.cantidad++;
     localCarrito();
     mostrarCarrito();
-    total();    
+    total();
+    Toastify({
+        text: `Se agregó una unidad: ${eleccionDecompra.nombre}`,
+        duration: 3000,
+        backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+    }).showToast();    
+
 }
+
+
 function restarUnidad() {
     let idProducto = this.id;   
     eleccionDecompra = carrito.find((producto) => producto.id == idProducto);
@@ -121,6 +131,11 @@ function restarUnidad() {
     localCarrito();
     mostrarCarrito();
     total();
+    Toastify({
+        text: `Se eliminó una unidad: ${eleccionDecompra.nombre}`,
+        duration: 3000,
+        backgroundColor: "linear-gradient(to right, #8C182D, #ffffff)",
+    }).showToast();
 }
 
 function vaciarCompra() {

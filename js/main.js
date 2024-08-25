@@ -143,8 +143,14 @@ function agregarCarrito() {
         carrito.push(eleccionDecompra);
 
     }
+    
     syncnCarrito();
     localCarrito();
+    Toastify({
+        text: `Se agregó el producto: ${eleccionDecompra.nombre}`,
+        duration: 3000,
+        backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
+    }).showToast();
 }   
 
 function syncnCarrito() {
