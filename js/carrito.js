@@ -2,13 +2,13 @@
 let totalPagar = 0;
 let unidades = 0;
 let eleccionDecompra = [];
-let carrito = JSON.parse(localStorage.getItem('local-carrito')) || []; 
+let carrito = JSON.parse(localStorage.getItem('local-carrito')) || [];
 
 //? mensajes
 let despeida = 'gracias por su compra';
 let addproduct = 'se agrego producto';
 let delProduct = 'se elimino producto';
-
+let productoPago = 'producto pagado';
 
 //? definir llamadas del dom
 
@@ -18,6 +18,8 @@ const sumaCompra = document.querySelector('#sumaCompra');
 let btnSumar = document.querySelectorAll('.sumar');
 let btnRestar = document.querySelectorAll('.restar');
 let btnVaciar = document.querySelector('#vaciar');
+let btnPagar = document.querySelector('#pagar');
+
 //? local storage
 
 function cargarCarrito() {
@@ -64,6 +66,7 @@ function mostrarCarrito() {
         i++;
         updatebtnSumar();
         updatebtnRestar();
+        pagarCarrito();
     });
 }
 
@@ -74,21 +77,21 @@ function mostrarCarrito() {
 function syncnCarrito() {
     nCarrito.innerText = '';
     unidades = carrito.length;
-    nCarrito.innerText = unidades; 
+    nCarrito.innerText = unidades;
 }
 
-function localCarrito() {    
+function localCarrito() {
     localStorage.setItem('local-carrito', JSON.stringify(carrito));
 }
-function total () {
+function total() {
     totalPagar = 0;
     carrito.forEach((producto) => {
         totalPagar += producto.precio * producto.cantidad;
     });
-    sumaCompra.innerHTML =  totalPagar;
+    sumaCompra.innerHTML = totalPagar;
 }
 
-function updatebtnSumar() { 
+function updatebtnSumar() {
     btnSumar = document.querySelectorAll('.sumar');
     btnSumar.forEach((boton) => {
         boton.addEventListener('click', sumarUnidad);
@@ -115,17 +118,17 @@ function sumarUnidad() {
         text: `Se agregó una unidad: ${eleccionDecompra.nombre}`,
         duration: 3000,
         backgroundColor: "linear-gradient(to right, #00b09b, #96c93d)",
-    }).showToast();    
+    }).showToast();
 
 }
 
 
 function restarUnidad() {
-    let idProducto = this.id;   
+    let idProducto = this.id;
     eleccionDecompra = carrito.find((producto) => producto.id == idProducto);
     if (eleccionDecompra.cantidad > 1) {
         eleccionDecompra.cantidad--;
-    }else{
+    } else {
         carrito = carrito.filter((producto) => producto.id != idProducto);
     }
     localCarrito();
@@ -139,15 +142,80 @@ function restarUnidad() {
 }
 
 function vaciarCompra() {
-    btnVaciar.addEventListener('click', vaciarCarrito); 
+    btnVaciar.addEventListener('click', vaciarCarrito);
 }
 
 
 function vaciarCarrito() {
-    carrito = [];
-    localCarrito();
-    mostrarCarrito();
-    total();
-    syncnCarrito();
+    Swal.fire({
+        title: "Peligro!",
+        text: "Seguro que desea eliminar el carrito?.No se puede deshacer esta acción!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "si, vaciar!"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            carrito = [];
+            localCarrito();
+            mostrarCarrito();
+            total();
+            syncnCarrito();
+            Swal.fire({
+                title: "Vaciado!",
+                text: "Su carrito ha sido vaciado",
+                icon: "success"
+            });
+        }
+    });
     
-}   
+
+}
+
+function pagar() {
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: "btn btn-success",
+            cancelButton: "btn btn-danger"
+        },
+        buttonsStyling: false
+    });
+    swalWithBootstrapButtons.fire({
+        title: "formas de pago",
+        text: "Transferencia bancaria o efectivo",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonText: "Proceder al pago",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            swalWithBootstrapButtons.fire({
+                title: `totla a pagar: ${totalPagar}`,
+                text: `pagado con exito`,
+                icon: "success"
+            });
+            vaciarCarrito();
+            localCarrito();
+            mostrarCarrito();
+            total();
+            syncnCarrito();
+        } else if (
+            /* Read more about handling dismissals below */
+            result.dismiss === Swal.DismissReason.cancel
+        ) {
+            swalWithBootstrapButtons.fire({
+                title: "Cancelled",
+                text: "El pago fue cancelado",
+                icon: "error"
+            });
+        }
+    });
+}
+
+
+
+function pagarCarrito() {
+    btnPagar.addEventListener('click', pagar);
+}
