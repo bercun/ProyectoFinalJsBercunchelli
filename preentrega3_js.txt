@@ -1,4 +1,4 @@
-En esta pre entrega 2 del curso de javaScript tengo que usar :
+Proyecto final del curso de javaScript tengo que usar :
 
 codificar funcionalidad incial del simulador
 flujo de trabajo captura de entradas(promt)
@@ -38,7 +38,7 @@ usuario
 Al hacer click en el boton 🛒 se agregue el producto  al objeto carrito(nombre,unidades,precio)
 y el se agrega un numero al lado de 🛒 del nav con carrito.unidadesTotal
 
-al hacer click en el arrito de abre una pagina nueva con el carrito y su informacion, lista de los elementos agregados(carrito.nombre,carritos.unidades,carrito.suma)
+al hacer click en el carrito de abre una pagina nueva con el carrito y su informacion, lista de los elementos agregados(carrito.nombre,carritos.unidades,carrito.suma)
 mostrta total ( suma de carrito.suma*carrito.iva)
 
 botones del carrito ➕ y ➖ al hacer click en sumar se ingrementa en uno carrito.unidades

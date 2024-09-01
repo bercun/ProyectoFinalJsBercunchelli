@@ -5,7 +5,7 @@ let eleccionDecompra = [];
 let carrito = JSON.parse(localStorage.getItem('local-carrito')) || [];
 
 //? mensajes
-let despeida = 'gracias por su compra';
+let despedida = 'Gracias por su compra';
 let addproduct = 'se agrego producto';
 let delProduct = 'se elimino producto';
 let productoPago = 'producto pagado';
@@ -182,8 +182,8 @@ function pagar() {
         buttonsStyling: false
     });
     swalWithBootstrapButtons.fire({
-        title: "formas de pago",
-        text: "Transferencia bancaria o efectivo",
+        title: `Total a pagar: ${totalPagar}`,
+        text: ` Formas de pago: efectivo, tarjeta, transferencia`,
         icon: "question",
         showCancelButton: true,
         confirmButtonText: "Proceder al pago",
@@ -192,11 +192,11 @@ function pagar() {
     }).then((result) => {
         if (result.isConfirmed) {
             swalWithBootstrapButtons.fire({
-                title: `totla a pagar: ${totalPagar}`,
+                title: despedida ,
                 text: `pagado con exito`,
                 icon: "success"
             });
-            vaciarCarrito();
+            carrito = [];
             localCarrito();
             mostrarCarrito();
             total();
