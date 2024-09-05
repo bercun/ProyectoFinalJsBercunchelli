@@ -1,0 +1,6 @@
+[
+    { "id": 1, "nombre": "Carpacio de gambas", "descripcion": "Gambas de Denia con vinagreta de lima, rúcula y tomate cherry", "precio": 560 },
+    { "id": 2, "nombre": "Ensalada caprese", "descripcion": "Tomate ecológico, muzarella de búfala, rúcula y aceite de oliva", "precio": 250 },
+    { "id": 3, "nombre": "Pan de queso", "descripcion": "Pancitos recién horneados de queso", "precio": 550 },
+    { "id": 4, "nombre": "Pan de molde con semillas", "descripcion": "Pan de molde, de 600gr, con sésamo, lino, chía y avena", "precio": 550 }
+]
